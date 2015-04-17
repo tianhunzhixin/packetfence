@@ -34,6 +34,7 @@ conf/guest-managers.conf
 conf/log.conf
 conf/chi.conf
 conf/nessus/remotescan.nessus
+conf/pfitemconfig.conf
 conf/networks.conf
 conf/radiusd/eap.conf
 conf/radiusd/radiusd.conf

@@ -110,6 +110,8 @@ our (
     %ConfigRealm,
 #provisioning.conf
     %ConfigProvisioning,
+
+    %ConfigPfItemConfig,
 );
 
 BEGIN {
@@ -154,6 +156,7 @@ BEGIN {
         %Doc_Config
         %ConfigRealm
         %ConfigProvisioning
+        %ConfigPfItemConfig
     );
 }
 
@@ -205,6 +208,8 @@ tie %ConfigFirewallSSO, 'pfconfig::cached_hash', 'config::Firewall_SSO';
 tie %ConfigRealm, 'pfconfig::cached_hash', 'config::Realm';
 
 tie %ConfigProvisioning, 'pfconfig::cached_hash', 'config::Provisioning';
+
+tie %ConfigPfItemConfig, 'pfconfig::cached_hash', 'config::PfItemConfig';
 
 sub import {
     pf::config->export_to_level(1,@_);
@@ -864,7 +869,7 @@ sub configreload {
 
     require pf::SwitchFactory;
     require pf::freeradius;
-    pf::freeradius::freeradius_populate_nas_config(\%pf::SwitchFactory::SwitchConfig); 
+    pf::freeradius::freeradius_populate_nas_config(\%pf::SwitchFactory::SwitchConfig);
 
     return ;
 }

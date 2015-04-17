@@ -61,6 +61,7 @@ our (
     $realm_config_file,
     $cluster_config_file,
     $server_cert, $server_key, $server_pem,
+    $pfitemconfig_config_file
 );
 
 BEGIN {
@@ -82,7 +83,7 @@ BEGIN {
         $floating_devices_config_file
         $dhcp_fingerprints_file $dhcp_fingerprints_url
         $oui_file $oui_url
-        $profiles_config_file %Profiles_Config 
+        $profiles_config_file %Profiles_Config
         $switches_config_file $violations_config_file $authentication_config_file
         $chi_config_file $ui_config_file $floating_devices_file $log_config_file
         @stored_config_files @log_files
@@ -100,6 +101,7 @@ BEGIN {
         $realm_config_file
         $cluster_config_file
         $server_cert $server_key $server_pem
+        $pfitemconfig_config_file
     );
 }
 
@@ -128,6 +130,7 @@ $pf_default_file = catfile($conf_dir, "pf.conf.defaults"); # TODO: Adjust. See $
 $chi_config_file = catfile($conf_dir, "chi.conf");
 $log_config_file = catfile($conf_dir, "log.conf");
 $provisioning_config_file = catfile($conf_dir, 'provisioning.conf');
+$pfitemconfig_config_file  = catfile($conf_dir,"pfitemconfig.conf");
 
 $network_config_file    = catfile($conf_dir, "networks.conf");
 $switches_config_file   = catfile($conf_dir, "switches.conf");
@@ -163,7 +166,7 @@ $dhcp_fingerprints_url = 'http://www.packetfence.org/dhcp_fingerprints.conf';
   httpd.proxy.reverse.access httpd.proxy.reverse.error
   httpd.webservices.access httpd.webservices.error
   packetfence.log pfbandwidthd.log pfdetect.log
-  pfdhcplistener.log pfdns.log pfmon.log 
+  pfdhcplistener.log pfdns.log pfmon.log
 );
 
 @stored_config_files = (
@@ -176,6 +179,7 @@ $dhcp_fingerprints_url = 'http://www.packetfence.org/dhcp_fingerprints.conf';
     $ui_config_file,$provisioning_config_file,$oauth_ip_file,$log_config_file,
     $admin_roles_config_file,$wrix_config_file,$apache_filters_config_file,
     $vlan_filters_config_file,$firewall_sso_config_file,
+    $pfitemconfig_config_file,
 );
 
 
