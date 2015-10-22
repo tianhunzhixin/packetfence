@@ -218,6 +218,7 @@ sub _should_we_reassign_vlan {
             $logger->info(
                 "[$mac] VLAN reassignment required (current Role = $role but should be in Role $newRole)"
             );
+            return $TRUE;
         }
     }
     $logger->debug("No VLAN reassignment required.");
