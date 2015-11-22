@@ -200,13 +200,13 @@ sub _should_we_reassign_vlan {
     if (defined($newCorrectVlan)) {
         if ( $newCorrectVlan eq '-1' ) {
             $logger->info(
-                "[$mac] VLAN reassignment required (current VLAN = $currentVlan but should be in VLAN $newCorrectVlan)"
+                "VLAN reassignment required (current VLAN = $currentVlan but should be in VLAN $newCorrectVlan)"
             );
             return $TRUE;
         } elsif (defined($currentVlan)) {
             if ( $newCorrectVlan ne $currentVlan ) {
                 $logger->info(
-                    "[$mac] VLAN reassignment required (current VLAN = $currentVlan but should be in VLAN $newCorrectVlan)"
+                    "VLAN reassignment required (current VLAN = $currentVlan but should be in VLAN $newCorrectVlan)"
                 );
                 return $TRUE;
             } else {
@@ -216,7 +216,7 @@ sub _should_we_reassign_vlan {
     } elsif (defined($role)) {
         if ($role ne $newRole) {
             $logger->info(
-                "[$mac] VLAN reassignment required (current Role = $role but should be in Role $newRole)"
+                "VLAN reassignment required (current Role = $role but should be in Role $newRole)"
             );
             return $TRUE;
         }
